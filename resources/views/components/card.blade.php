@@ -7,5 +7,5 @@
         {{ $title }}
     </div>
 
-    
+    {{ $slot }}
 </div>
