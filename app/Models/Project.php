@@ -15,7 +15,6 @@ class Project extends Model
         'status',
         'type',
         'link',
-        'priority',
         'start_date',
         'user_id',
     ];
