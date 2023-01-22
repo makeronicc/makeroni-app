@@ -33,7 +33,7 @@
                 <div class="mt-4">
                     <x-jet-label for="terms">
                         <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms" required />
+                            <x-jet-checkbox name="terms" id="terms"/>
 
                             <div class="ml-2">
                                 {!! __('I agree to the :terms_of_service and :privacy_policy', [
@@ -56,5 +56,9 @@
                 </x-jet-button>
             </div>
         </form>
+
+        @if (JoelButcher\Socialstream\Socialstream::show())
+            <x-socialstream />
+        @endif
     </x-jet-authentication-card>
 </x-guest-layout>
