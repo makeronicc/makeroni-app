@@ -23,6 +23,10 @@ processes = []
 [deploy]
   release_command = "php /var/www/html/artisan migrate --force"
 
+[mounts]
+  source="makeroni_storage"
+  destination="/var/www/html/storage"
+
 [experimental]
   auto_rollback = true
 
