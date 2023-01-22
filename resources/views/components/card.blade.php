@@ -4,7 +4,9 @@
     </div>
 
     <div class="mt-8 text-2xl">
-        {{ $title }}
+        @if (isset($title))
+            {{ $title }}
+        @endif
     </div>
 
     {{ $slot }}
