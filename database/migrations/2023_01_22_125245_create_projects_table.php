@@ -20,8 +20,7 @@ return new class extends Migration
             $table->string('status');
             $table->string('type');
             $table->string('link');
-            $table->string('priority');
-            $table->string('start_date')->default(now());
+            $table->string('start_date');
             $table->bigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
