@@ -12,44 +12,18 @@
             </div>
         @endif
 
-        {{-- <form method="POST" action="{{ route('login') }}">
-            @csrf
+        <h1 class="text-xl font-semibold text-gray-900 text-center pb-4">Login or Sign Up</h1>
 
-            <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
+        {{-- Links to login and register --}}
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
+        <div class="flex justify-center">
+            <a href="{{ route('login') }}" class="inline-flex items-center justify-center rounded-md border border-transparent bg-green-700 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:w-auto">
+                Login
+            </a>
+            <a href="{{ route('register') }}" class="ml-4 inline-flex items-center justify-center rounded-md border border-transparent bg-green-700 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:w-auto">Sign
+                Up
+            </a>
+        </div>
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <input id="remember_me" type="checkbox" class="form-checkbox" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-jet-button class="ml-4">
-                    {{ __('Login') }}
-                </x-jet-button>
-            </div>
-        </form> --}}
-
-        <h1 class="text-xl font-semibold text-gray-900 text-center pb-4"
-        >Login or Sign Up</h1>
-
-        @if (JoelButcher\Socialstream\Socialstream::show())
-            <x-socialstream />
-        @endif
     </x-jet-authentication-card>
 </x-guest-layout>
