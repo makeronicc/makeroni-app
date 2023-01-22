@@ -27,4 +27,5 @@ Route::middleware([
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
     Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
+    Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('projects.show');
 });
