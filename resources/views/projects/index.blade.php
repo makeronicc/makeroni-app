@@ -17,6 +17,9 @@
                     href="/projects/create">Create Project</a>
             </div>
         </div>
-        @livewire('projects.view')
+        @livewire('projects.view', ['view' => 'personal'])
+        @livewire('projects.view', ['view' => 'member'])
+        @livewire('projects.view', ['view' => 'watched'])
+        @livewire('projects.view', ['view' => 'other'])
     </x-card>
 </x-app-layout>

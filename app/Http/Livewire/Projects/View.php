@@ -7,10 +7,25 @@ use Livewire\Component;
 
 class View extends Component
 {
-    public $projects;
+    public $projects, $view;
     public function render()
     {
-        $this->projects = Project::all();
+        if ($this->view == 'all') {
+            $this->projects = Project::all();
+        } elseif ($this->view == 'personal') {
+            $this->projects = Project::where('user_id', auth()->user()->id)->get();
+        } elseif ($this->view == 'member') {
+            $this->projects = [];
+        } elseif ($this->view == 'watched') {
+            $this->projects = [];
+        } elseif ($this->view == 'archived') {
+            $this->projects = [];
+        } elseif ($this->view == 'deleted') {
+            $this->projects = [];
+        } elseif ($this->view == 'other') {
+            $this->projects = [];
+        }
+        
         return view('livewire.projects.view');
     }
 }
