@@ -18,6 +18,10 @@ processes = []
   LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
 
   DB_CONNECTION = "pgsql"
+  DB_DATABASE = "makeroni"
+
+[deploy]
+  release_command = "php /var/www/html/artisan migrate --force"
 
 [experimental]
   auto_rollback = true
