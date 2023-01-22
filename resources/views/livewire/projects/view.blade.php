@@ -18,44 +18,48 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 bg-white">
-                        @foreach ( $projects as $project )
+                        @foreach ($projects as $project)
                             <tr>
-                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
+                                <x-table.item>
                                     <div>
                                         <div class="font-medium text-gray-900">{{ $project->name }}</div>
                                         <div class="text-gray-500">{{ $project->description }}</div>
                                     </div>
-                                </td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                </x-table.item>
+                                <x-table.item>
                                     {{ Str::title($project->type) }}
-                                </td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                    <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
+                                </x-table.item>
+                                <x-table.item>
+                                    <span
+                                        class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
                                         {{ Str::title($project->status) }}
                                     </span>
-                                </td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                </x-table.item>
+                                <x-table.item>
                                     <div class="flex items-center">
                                         <div class="h-10 w-10 flex-shrink-0">
                                             <img class="h-10 w-10 rounded-full"
-                                                src="{{ $project->user->profile_photo_url }}"
-                                                alt="">
+                                                src="{{ $project->user->profile_photo_url }}" alt="">
                                         </div>
                                         <div class="ml-4">
                                             <div class="font-medium text-gray-900">{{ $project->user->name }}</div>
                                         </div>
                                     </div>
-                                </td>
-                                <td class="relative whitespace-nowrap py-4 text-right text-sm font-medium sm:pr-6">
+                                </x-table.item>
+                                <x-table.item>
                                     {{-- Edit --}}
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900 px-2">Edit<span class="sr-only">, {{ $project->name }}</span></a>
+                                    <a href="#" class="text-indigo-600 hover:text-indigo-900 px-2">Edit<span
+                                            class="sr-only">, {{ $project->name }}</span></a>
                                     {{-- View --}}
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900 px-2">View<span class="sr-only">, {{ $project->name }}</span></a>
-                                    {{-- Delete (only show if owner)--}}
-                                    @if( $project->user_id == Auth::user()->id )
-                                    <a href="#" class="text-red-600 hover:text-indigo-900 px-2">Delete<span class="sr-only">, {{ $project->name }}</span></a>
+                                    <a href="/projects/{{ $project->id }}"
+                                        class="text-indigo-600 hover:text-indigo-900 px-2">View<span class="sr-only">,
+                                            {{ $project->name }}</span></a>
+                                    {{-- Delete (only show if owner) --}}
+                                    @if ($project->user_id == Auth::user()->id)
+                                        <a href="#" class="text-red-600 hover:text-indigo-900 px-2">Delete<span
+                                                class="sr-only">, {{ $project->name }}</span></a>
                                     @endif
-                                </td>
+                                </x-table.item>
                             </tr>
                         @endforeach
                     </tbody>
