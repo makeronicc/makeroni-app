@@ -1,0 +1,46 @@
+
+.jd-input{
+    @apply border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm;
+    @apply dark:bg-gray-800 dark:text-gray-200 dark:focus:outline-none dark:border-gray-500 dark:focus:ring-gray-600 dark:focus:border-gray-600;
+}
+
+.jd-auth-card\:body{
+    @apply min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900;
+}
+
+.jd-auth-card\:content{
+    @apply w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg dark:bg-gray-800;
+}
+
+.jd-button{
+    @apply inline-flex items-center px-4 py-2 bg-gray-900 border border-transparent rounded-md font-semibold text-xs text-white;
+    @apply uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition;
+    @apply dark:focus:ring-gray-700;
+}
+
+.jd-action-section\:content{
+    @apply px-4 py-5 sm:p-6 bg-white shadow sm:rounded-lg dark:bg-gray-700
+}
+
+.jd-checkbox{
+    @apply rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50;
+    @apply dark:text-slate-600 dark:bg-gray-900 dark:border-gray-700 dark:focus:ring-gray-800 dark:focus:border-gray-900;
+}
+
+.jd-confirmation-modal\:body{
+    @apply bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 dark:bg-gray-800;
+}
+
+.jd-general-link{
+    @apply underline text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-500;
+}
+
+.jd-input-error{
+    @apply text-sm text-red-600 dark:text-red-400;
+}
+
+.jd-secondary-button{
+    @apply inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm;
+    @apply hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200 active:text-gray-800 active:bg-gray-50 disabled:opacity-25 transition;
+    @apply dark:bg-gray-700 dark:text-gray-100 dark:border-gray-800 dark:hover:text-gray-400;
+}
